@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafika Malinowska | Modern Digital Art</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0b10;
+            --bg-card: #14161f;
+            --text-main: #e0e6ed;
+            --text-muted: #94a3b8;
+            --accent: #00f2fe;
+            --accent-glow: rgba(0, 242, 254, 0.5);
+            --ease: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes backgroundPulse {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(-45deg, #0a0b10, #1a1d29, #0a0b10, #14161f);
+            background-size: 400% 400%;
+            animation: backgroundPulse 15s ease infinite;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+            animation: fadeInDown 1.5s var(--ease) 0.8s both;
+        }
+
+        header h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInDown 1s var(--ease) both;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: fadeInDown 1s var(--ease) 0.2s both;
+        }
+
+        section {
+            padding: 8rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background-color: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.03);
+            transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
+            opacity: 0;
+            transform: translateY(40px);
+            cursor: zoom-in;
+        }
+
+        .portfolio-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 15px var(--accent-glow);
+            border-color: rgba(0, 242, 254, 0.3);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease);
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .contact-section {
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1d29 0%, var(--bg-dark) 70%);
+            border-top: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .discord-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 18px 45px;
+            background-color: transparent;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            transition: all 0.4s var(--ease);
+            position: relative;
+            overflow: hidden;
+            margin-top: 2rem;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+        }
+
+        .discord-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--accent);
+            transform: translateY(100%);
+            transition: transform 0.4s var(--ease);
+            z-index: -1;
+        }
+
+        .discord-btn:hover {
+            color: #fff;
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .discord-btn:hover::before {
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.03);
+        }
+
+        /* LIGHTBOX STYLES */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 11, 16, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s var(--ease);
+            backdrop-filter: blur(5px);
+            cursor: zoom-out;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0, 242, 254, 0.15);
+            transform: scale(0.8);
+            transition: transform 0.4s var(--ease);
+            object-fit: contain;
+        }
+
+        .lightbox.active img {
+            transform: scale(1);
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 3rem; }
+            section { padding: 5rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p>Creative Studio</p>
+        <h1>Grafika Malinowska</h1>
+    </header>
+
+    <div class="container">
+        <section id="portfolio">
+            <h2 class="section-title">Wybrane Projekty</h2>
+            <div class="portfolio-grid" id="portfolio-grid">
+            </div>
+        </section>
+    </div>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Masz pomysł?</h2>
+            <p class="section-subtitle">Omówmy Twój projekt bezpośrednio. Kliknij poniżej, aby otworzyć czat.</p>
+            <a href="https://discord.com/users/@mal1nae_" class="discord-btn" target="_blank">
+                Skontaktuj się na Discord
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; 2026 Grafika Malinowska.
+        </div>
+    </footer>
+
+    <!-- Element Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Powiększone zdjęcie" id="lightbox-img">
+    </div>
+
+    <script>
+        const availableImages = [
+            '1.png', '2.png', '3.png'
+        ];
+
+        const shuffled = availableImages.sort(() => 0.5 - Math.random());
+        const selectedImages = shuffled.slice(0, 3);
+        const portfolioGrid = document.getElementById('portfolio-grid');
+        
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        selectedImages.forEach((imgName, index) => {
+            const div = document.createElement('div');
+            div.className = 'portfolio-item';
+            div.style.transitionDelay = `${index * 0.15}s`; 
+            
+            const imgElement = document.createElement('img');
+            imgElement.src = `portfolio/${imgName}`;
+            imgElement.alt = `Realizacja ${imgName}`;
+            
+            div.appendChild(imgElement);
+            portfolioGrid.appendChild(div);
+
+            div.addEventListener('click', () => {
+                lightboxImg.src = imgElement.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
