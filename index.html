@@ -119,7 +119,7 @@
         }
 
         section {
-            padding: 8rem 0;
+            padding: 5rem 0;
         }
 
         .section-title {
@@ -133,8 +133,57 @@
         .section-subtitle {
             text-align: center;
             color: var(--text-muted);
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             font-weight: 300;
+        }
+
+        .buttons-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 45px;
+            background-color: transparent;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            transition: all 0.4s var(--ease);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+            min-width: 320px;
+        }
+
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--accent);
+            transform: translateY(100%);
+            transition: transform 0.4s var(--ease);
+            z-index: -1;
+        }
+
+        .contact-btn:hover {
+            color: #fff;
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .contact-btn:hover::before {
+            transform: translateY(0);
         }
 
         .portfolio-grid {
@@ -177,61 +226,15 @@
             transform: scale(1.1);
         }
 
-        .contact-section {
-            text-align: center;
-            background: radial-gradient(circle at center, #1a1d29 0%, var(--bg-dark) 70%);
-            border-top: 1px solid rgba(255,255,255,0.03);
-        }
-
-        .discord-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 18px 45px;
-            background-color: transparent;
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border: 2px solid var(--accent);
-            border-radius: 50px;
-            transition: all 0.4s var(--ease);
-            position: relative;
-            overflow: hidden;
-            margin-top: 2rem;
-            box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
-        }
-
-        .discord-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--accent);
-            transform: translateY(100%);
-            transition: transform 0.4s var(--ease);
-            z-index: -1;
-        }
-
-        .discord-btn:hover {
-            color: #fff;
-            box-shadow: 0 0 30px var(--accent-glow);
-        }
-
-        .discord-btn:hover::before {
-            transform: translateY(0);
-        }
-
         footer {
             text-align: center;
             padding: 3rem 0;
             font-size: 0.9rem;
             color: var(--text-muted);
             border-top: 1px solid rgba(255,255,255,0.03);
+            margin-top: 4rem;
         }
 
-        /* LIGHTBOX STYLES */
         .lightbox {
             position: fixed;
             top: 0;
@@ -271,11 +274,11 @@
 
         @media (max-width: 768px) {
             header h1 { font-size: 3rem; }
-            section { padding: 5rem 0; }
+            section { padding: 4rem 0; }
+            .contact-btn { width: 100%; min-width: auto; }
         }
     </style>
 </head>
-    
 <body>
 
     <header>
@@ -287,22 +290,25 @@
     </header>
 
     <div class="container">
+        <section id="contact">
+            <h2 class="section-title">Masz pomysł?</h2>
+            <p class="section-subtitle">Omówmy Twój projekt bezpośrednio.</p>
+            <div class="buttons-wrapper">
+                <a href="mailto:malinowska.graphics@gmail.com" class="contact-btn">
+                    Wyślij E-mail
+                </a>
+                <a href="https://discordapp.com/users/1055216211232829580" class="contact-btn" target="_blank">
+                    Skontaktuj się przez Discord
+                </a>
+            </div>
+        </section>
+
         <section id="portfolio">
             <h2 class="section-title">Wybrane Projekty</h2>
             <div class="portfolio-grid" id="portfolio-grid">
             </div>
         </section>
     </div>
-
-    <section class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Masz pomysł?</h2>
-            <p class="section-subtitle">Omówmy Twój projekt bezpośrednio. Kliknij poniżej, aby otworzyć czat.</p>
-            <a href="https://discordapp.com/users/1055216211232829580" class="discord-btn" target="_blank">
-                Skontaktuj się przez Discord
-            </a>
-        </div>
-    </section>
 
     <footer>
         <div class="container">
