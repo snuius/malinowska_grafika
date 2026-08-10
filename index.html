@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grafika Malinowska</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -59,7 +59,7 @@
         }
 
         header {
-            height: 80vh;
+            height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -75,9 +75,27 @@
             left: 50%;
             transform: translateX(-50%);
             width: 1px;
-            height: 100px;
+            height: 80px;
             background: linear-gradient(to bottom, var(--accent), transparent);
             animation: fadeInDown 1.5s var(--ease) 0.8s both;
+        }
+
+        .logo-container {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1.5rem;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+            animation: fadeInDown 1s var(--ease) both;
+            background-color: var(--bg-card);
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         header h1 {
@@ -88,7 +106,7 @@
             background: linear-gradient(to right, #fff, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: fadeInDown 1s var(--ease) both;
+            animation: fadeInDown 1s var(--ease) 0.1s both;
         }
 
         header p {
@@ -97,7 +115,7 @@
             font-weight: 300;
             letter-spacing: 1px;
             text-transform: uppercase;
-            animation: fadeInDown 1s var(--ease) 0.2s both;
+            animation: fadeInDown 1s var(--ease) 0.3s both;
         }
 
         section {
@@ -261,8 +279,11 @@
 <body>
 
     <header>
-        <p>Creative Studio</p>
+        <div class="logo-container">
+            <img src="logo.png" alt="Grafika Malinowska Logo">
+        </div>
         <h1>Grafika Malinowska</h1>
+        <p>Creative Studio</p>
     </header>
 
     <div class="container">
@@ -289,7 +310,6 @@
         </div>
     </footer>
 
-    <!-- Element Lightbox -->
     <div class="lightbox" id="lightbox">
         <img src="" alt="Powiększone zdjęcie" id="lightbox-img">
     </div>
