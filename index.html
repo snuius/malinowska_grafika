@@ -28,6 +28,7 @@
         .lightbox img { max-width: 90%; max-height: 90vh; border-radius: 8px; box-shadow: 0 0 40px rgba(0, 242, 254, 0.15); transform: scale(0.8); transition: transform 0.4s var(--ease); object-fit: contain; }
         .lightbox.active img { transform: scale(1); }
         @media (max-width: 768px) { header h1 { font-size: 3rem; } section { padding: 4rem 0; } }
+        .gallery-btn-container { display: flex; justify-content: center; margin-top: 3rem; }
     </style>
 </head>
 <body>
@@ -54,6 +55,10 @@
             <h2 class="section-title">Wybrane Projekty</h2>
             <div class="portfolio-grid" id="portfolio-grid"></div>
         </section>
+
+        <div class="gallery-btn-container">
+            <a href="galeria.html" class="contact-btn" id="gallery-btn">Zobacz Galerię</a>
+        </div>
     </div>
 
     <footer>
@@ -68,7 +73,7 @@
     </div>
 
     <script>
-        const availableImages = ['1.png', '2.png', '3.png', '4.png'];
+        const availableImages = ['1.png', '2.png', '3.png', '4.png', '5.png'];
         const shuffled = availableImages.sort(() => 0.5 - Math.random());
         const selectedImages = shuffled.slice(0, 3);
         const portfolioGrid = document.getElementById('portfolio-grid');
