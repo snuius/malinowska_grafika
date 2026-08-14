@@ -10,7 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        body { padding-top: 50px; }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding-top: 50px;
+        }
+
+        body > .container {
+            flex: 1;
+        }
 
         .back-container {
             display: flex;
@@ -21,7 +31,7 @@
         .gallery-container {
             width: 100%;
             max-width: 900px;
-            margin: 0 auto;
+            margin: 0 auto 3rem auto;
             background-color: var(--bg-card);
             border-radius: 20px;
             padding: 2rem;
@@ -132,14 +142,11 @@
 
         footer {
             text-align: center;
-            padding: 3rem 0;
+            padding: 2rem 0;
             font-size: 0.9rem;
             color: var(--text-muted);
             border-top: 1px solid rgba(255,255,255,0.03);
-            position: absolute;
-            bottom: 30px;
-            left: 0;
-            right: 0;
+            width: 100%;
         }
 
         footer a {
