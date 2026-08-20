@@ -4,70 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cennik | Grafika Malinowska</title>
-    <link rel="icon" href="icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        .back-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            margin-top: 7.5rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
-    <div class="back-container">
-            <a href="index.html" class="contact-btn">&larr; Powrót</a>
-    </div>
     <header>
-        <h1>Cennik</h1>
+        <nav>
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo">
+                <p>Grafika Malinowska</p></a>
+            <ul>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="cennik.html" aria-current="page">Cennik</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Usługa</th>
-                    <th>Cena orientacyjna</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Banner na Social Media</td>
-                    <td>od 25 PLN</td>
-                </tr>
-                <tr>
-                    <td>Miniatura Filmu</td>
-                    <td>od 25 PLN</td>
-                </tr>
-                <tr>
-                    <td>Logo / Avatar</td>
-                    <td>od 15 PLN</td>
-                </tr>
-                <tr>
-                    <td>Inny Projekt</td>
-                    <td>Wycena Indywidualna</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <p class="section-subtitle">Wszystkie ceny podlegają negocjacji w zależności od zakresu projektu.</p>
-
-        <section id="contact">
-            <h2 class="section-title">Omówmy projekt</h2>
-            <div class="buttons-wrapper">
-                <a href="mailto::kontakt@malinowska.cc" class="contact-btn">Wyślij E-mail</a>
-                <a href="https://discordapp.com/users/1055216211232829580" class="contact-btn" target="_blank">Kontakt przez Discord</a>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="container">
-            &copy; 2026 Grafika Malinowska. <br>
-            Website design by <a href="mailto:contact@snujus.com">Snujus</a>
+    <main>
+        <div class="cennik-container">
+            <h1>Cennik</h1>
+            <table class="cennik-table">
+                <thead>
+                    <tr>
+                        <th>USŁUGA</th>
+                        <th>CENA ORIENTACYJNA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Banner na Social Media</td>
+                        <td>od 25 PLN</td>
+                    </tr>
+                    <tr>
+                        <td>Miniatura Filmu</td>
+                        <td>od 25 PLN</td>
+                    </tr>
+                    <tr>
+                        <td>Logo / Avatar</td>
+                        <td>od 15 PLN</td>
+                    </tr>
+                    <tr>
+                        <td>Inny Projekt</td>
+                        <td>Wycena Indywidualna</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="cennik-footer-note">Wszystkie ceny podlegają negocjacji w zależności od zakresu projektu.</div>
         </div>
+    </main>
+    
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="cennik.html" aria-current="page">Cennik</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2026 Grafika Malinowska</p>
+        <p>Website design by <a href="mailto:contact@snujus.com">Snujus</a></p>
     </footer>
+
 </body>
 </html>
