@@ -25,8 +25,9 @@
             <h1>Kontakt</h1>
             <p>Wybierz preferowaną formę kontaktu:</p>
             <div class="contact-buttons">
-                <a href="https://discord.com/users/1055216211232829580" class="btn contact-btn" target="_blank" rel="noopener noreferrer">Discord</a>
-                <a href="mailto:kontakt@malinowska.cc" class="btn contact-btn">Email</a>
+                <!-- <a href="https://discord.com/users/1055216211232829580" class="btn contact-btn" target="_blank" rel="noopener noreferrer">Discord</a> -->
+                <a class="btn contact-btn" id="discord-btn" target="_blank" rel="noopener noreferrer" onclick="showDiscordName()">Discord</a>
+                <a href="mailto:kontakt@malinowska.cc" id="email-btn" class="btn contact-btn" onclick="showEmail()">Email</a>
             </div>
         </div>
     </main>
@@ -42,5 +43,21 @@
         <p>&copy; 2026 Grafika Malinowska</p>
         <p>Website design by <a href="mailto:contact@snujus.com">Snujus</a></p>
     </footer>
+
+    <script>
+        function showDiscordName() {
+            const discordName = "@mal1nae_";
+            let btn = document.getElementById("discord-btn");
+            btn.textContent = discordName;
+        }
+
+        function showEmail() {
+            const email = "kontakt@malinowska.cc";
+            let emailbtn = document.getElementById("email-btn");
+            emailbtn.textContent = email;
+        }
+
+    </script>
+
 </body>
 </html>
