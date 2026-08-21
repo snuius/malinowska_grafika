@@ -265,15 +265,12 @@ main {
 
 .hero-image img {
     width: min(720px, 90vw);
-    /* border-radius: 22px; */
-    /* box-shadow: 0 30px 60px rgba(0,0,0,.5); */
     transform: scale(2);
+    transition: transform 0.3s ease;
 }
 
 .hero-image img:hover {
     width: min(720px, 90vw);
-    /* border-radius: 22px; */
-    /* box-shadow: 0 30px 60px rgba(0,0,0,.5); */
     transform: scale(2.5);
 }
 
