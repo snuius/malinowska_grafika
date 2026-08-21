@@ -480,5 +480,33 @@ footer a:hover { color: var(--pink-light); }
     cursor: pointer;
 }
 #currentImage {
-    cursor: pointer;
+    cursor: zoom-in;
+    transition: transform .25s ease, filter .25s ease;
+}
+#currentImage:hover{transform:scale(1.015);filter:brightness(1.05);}
+
+.section-anchor{
+  scroll-margin-top:110px;
+  padding-top:140px;
+  padding-bottom:220px;
+}
+
+#home{padding-bottom:220px;}
+
+#galeria,#cennik,#kontakt{margin-top:120px;}
+.gallery-wrapper{
+  max-width:1200px;
+  margin:0 auto;
+}
+.thumb img{
+  cursor:pointer;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.thumb img:hover{
+  transform:scale(1.04);
+  box-shadow:0 20px 40px rgba(255,63,142,.25);
+}
+.contact-container,.cennik-container{
+  max-width:1000px;
+  margin:0 auto;
 }
