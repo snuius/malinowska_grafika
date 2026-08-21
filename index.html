@@ -8,84 +8,125 @@
     <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
+    <div class="toast" id="toast">Skopiowano do schowka!</div>
+
     <header>
         <nav>
-            <a href="index.html" class="logo"><img src="images/logo.png" alt="Logo">
-                <p>Grafika Malinowska</p></a>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Logo">
+                <p>Grafika Malinowska</p>
+            </a>
             <ul>
                 <li><a href="#home">Strona Główna</a></li>
+                <li><a href="#o-mnie">O mnie</a></li>
                 <li><a href="#galeria">Galeria</a></li>
                 <li><a href="#cennik">Cennik</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1>Grafika Malinowska</h1>
                 <p>Twórz wyjątkowe doświadczenia. Profesjonalna grafika dla Twojej społeczności.</p>
                 <div class="hero-buttons">
-            <a href="#galeria" class="btn">Zobacz Galerię</a>
-            <a href="#kontakt" class="btn btn-secondary">Kontakt</a>
-        </div>
+                    <a href="#galeria" class="btn">Zobacz Galerię</a>
+                    <a href="#kontakt" class="btn btn-secondary">Kontakt</a>
+                </div>
             </div>
             <div class="hero-image">
                 <img src="images/skin.png" alt="Skin">
             </div>
         </section>
     
-<section id="galeria" class="gallery-wrapper section-anchor">
-<h1>Galeria</h1>
-<div class="main-preview">
-    <img id="currentImage" src="" alt="Praca poglądowa">
-</div>
-<div class="gallery-controls">
-    <button class="gallery-btn" id="prevBtn">&lt;</button>
-    <button class="gallery-btn" id="nextBtn">&gt;</button>
-</div>
-<div class="thumbnails-grid" id="thumbnailsGrid"></div>
-</section>
-<div class="lightbox" id="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <img id="lightboxImage" src="" alt="Powiększone zdjęcie">
-</div>
+        <section id="o-mnie" class="about-container section-anchor">
+            <h1>O mnie</h1>
+            <div class="about-card">
+                <div class="about-grid">
+                    <div class="about-image-box">
+                        <div class="about-avatar-wrapper">
+                            <img src="images/twarz.png" alt="Twarz" style="image-rendering: pixelated;">
+                            <div class="about-pill">16 lat · Polska PL</div>
+                        </div>
+                    </div>
+                    <div class="about-text-box">
+                        <h2>Cześć, Jestem Zuzia.</h2>
+                        <p>Mam 16 lat, zajmuję się grafiką w klimacie Minecrafta oraz renderami w Blenderze. Uwielbiam tworzyć unikalne prace dla YouTuberów i społeczności graczy. Stale się u rozwijam i doskonalę swoje umiejętności.</p>
+                        <ul class="about-features">
+                            <li><span>🎂</span> Projektuję od 13. roku życia</li>
+                            <li><span>🧊</span> Na co dzień korzystam z Blendera i Photopea</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="cennik" class="cennik-container section-anchor">
-<h1>Cennik</h1>
-<table class="cennik-table">
-<thead><tr><th>USŁUGA</th><th>CENA ORIENTACYJNA</th></tr></thead>
-<tbody>
-<tr><td>Banner na Social Media</td><td>od 25 PLN</td></tr>
-<tr><td>Miniatura Filmu</td><td>od 25 PLN</td></tr>
-<tr><td>Logo / Avatar</td><td>od 15 PLN</td></tr>
-<tr><td>Inny Projekt</td><td>Wycena Indywidualna</td></tr>
-</tbody></table>
-<div class="cennik-footer-note">Wszystkie ceny podlegają negocjacji w zależności od zakresu projektu.</div>
-</section>
+        <section id="galeria" class="gallery-wrapper section-anchor">
+            <h1>Galeria</h1>
+            <div class="main-preview">
+                <img id="currentImage" src="" alt="Praca poglądowa">
+            </div>
+            <div class="gallery-controls">
+                <button class="gallery-btn" id="prevBtn">&lt;</button>
+                <button class="gallery-btn" id="nextBtn">&gt;</button>
+            </div>
+            <div class="thumbnails-grid" id="thumbnailsGrid"></div>
+        </section>
 
-<section id="kontakt" class="contact-container section-anchor">
-<h1>Kontakt</h1>
-<p>Wybierz preferowaną formę kontaktu:</p>
-<div class="contact-buttons">
-<a class="btn contact-btn" id="discord-btn" onclick="showDiscordName()" style="cursor:pointer;">Discord</a>
-<a href="mailto:kontakt@malinowska.cc" id="email-btn" class="btn contact-btn" onclick="showEmail()">Email</a>
-</div>
-</section>
+        <div class="lightbox" id="lightbox">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightboxImage" src="" alt="Powiększone zdjęcie">
+        </div>
 
-<script>
-function showDiscordName() {
-document.getElementById('discord-btn').textContent='@mal1nae_';
-}
-function showEmail() {
-document.getElementById('email-btn').textContent='kontakt@malinowska.cc';
-}
-</script>
-</main>
+        <section id="cennik" class="cennik-container section-anchor">
+            <h1>Cennik</h1>
+            <table class="cennik-table">
+                <thead>
+                    <tr>
+                        <th>USŁUGA</th>
+                        <th>CENA ORIENTACYJNA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Banner na Social Media</td><td>od 25 PLN</td></tr>
+                    <tr><td>Miniatura Filmu</td><td>od 25 PLN</td></tr>
+                    <tr><td>Avatar</td><td>od 15 PLN</td></tr>
+                    <tr><td>Logo Rysowane</td><td>od 20 PLN</td></tr>
+                    <tr><td>Logo Nierysowane</td><td>od 15 PLN</td></tr>
+                    <tr><td>Inny Projekt</td><td>Wycena Indywidualna</td></tr>
+                </tbody>
+            </table>
+            <div class="cennik-footer-note">Wszystkie ceny podlegają negocjacji w zależności od zakresu projektu.</div>
+        </section>
+
+        <section id="kontakt" class="contact-container section-anchor">
+            <h1>Kontakt</h1>
+            <p>Masz pomysł na projekt? Odezwij się na jednej z tych platform:</p>
+            
+            <div class="contact-cards-grid">
+                <div class="contact-card-item" onclick="copyToClipboard('mal1nae_', 'Skopiowano nazwę Discord do schowka!')">
+                    <div class="contact-card-title">
+                        <span>💬</span> Discord
+                    </div>
+                    <div class="contact-card-desc">@mal1nae_</div>
+                </div>
+                
+                <div class="contact-card-item" onclick="copyToClipboard('kontakt@malinowska.cc', 'Skopiowano adres email do schowka!')">
+                    <div class="contact-card-title">
+                        <span>✉️</span> Email
+                    </div>
+                    <div class="contact-card-desc">kontakt@malinowska.cc</div>
+                </div>
+            </div>
+        </section>
+    </main>
     
     <footer>
         <nav>
             <ul>
+                <li><a href="#o-mnie">O mnie</a></li>
                 <li><a href="#cennik">Cennik</a></li>
                 <li><a href="#galeria">Galeria</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
@@ -95,9 +136,96 @@ document.getElementById('email-btn').textContent='kontakt@malinowska.cc';
         <p>Website design by <a href="mailto:contact@snujus.com">Snujus</a></p>
     </footer>
 
+    <script>
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
 
-<script>
-const last_index=8;let images=[];for(let i=1;i<=last_index;i++)images.push(`${i}.png`);let currentIndex=0;const currentImgElement=document.getElementById('currentImage');const prevBtn=document.getElementById('prevBtn');const nextBtn=document.getElementById('nextBtn');const thumbnailsGrid=document.getElementById('thumbnailsGrid');function initThumbnails(){thumbnailsGrid.innerHTML='';images.forEach((imgSrc,index)=>{const thumbDiv=document.createElement('div');thumbDiv.classList.add('thumb');if(index===currentIndex)thumbDiv.classList.add('active');const img=document.createElement('img');img.src='galeria/'+imgSrc;img.alt='Thumb '+(index+1);thumbDiv.appendChild(img);thumbDiv.addEventListener('click',()=>updateGallery(index));thumbnailsGrid.appendChild(thumbDiv);});}function updateGallery(index){currentIndex=index;currentImgElement.style.opacity='0';setTimeout(()=>{currentImgElement.src='galeria/'+images[currentIndex];if(currentImgElement.complete){currentImgElement.style.opacity='1';}else{currentImgElement.onload=()=>currentImgElement.style.opacity='1';}},100);document.querySelectorAll('.thumb').forEach((t,i)=>t.classList.toggle('active',i===currentIndex));}prevBtn.addEventListener('click',()=>updateGallery((currentIndex-1+images.length)%images.length));nextBtn.addEventListener('click',()=>updateGallery((currentIndex+1)%images.length));document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')prevBtn.click();if(e.key==='ArrowRight')nextBtn.click();});const lightbox=document.getElementById('lightbox');const lightboxImg=document.getElementById('lightboxImage');currentImgElement.addEventListener('click',()=>{lightbox.classList.add('active');lightboxImg.src=currentImgElement.src;document.body.style.overflow='hidden';});lightbox.addEventListener('click',e=>{if(e.target===lightbox||e.target.classList.contains('lightbox-close')){lightbox.classList.remove('active');document.body.style.overflow='';}});document.addEventListener('keydown',e=>{if(e.key==='Escape'){lightbox.classList.remove('active');document.body.style.overflow='';document.documentElement.style.overflow='';}});initThumbnails();updateGallery(0);
-</script>
+        function copyToClipboard(text, message) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(message);
+            });
+        }
+
+        const last_index = 8;
+        let images = [];
+        for (let i = 1; i <= last_index; i++) images.push(`${i}.png`);
+
+        let currentIndex = 0;
+        const currentImgElement = document.getElementById('currentImage');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const thumbnailsGrid = document.getElementById('thumbnailsGrid');
+
+        function initThumbnails() {
+            thumbnailsGrid.innerHTML = '';
+            images.forEach((imgSrc, index) => {
+                const thumbDiv = document.createElement('div');
+                thumbDiv.classList.add('thumb');
+                if (index === currentIndex) thumbDiv.classList.add('active');
+                
+                const img = document.createElement('img');
+                img.src = 'galeria/' + imgSrc;
+                img.alt = 'Thumb ' + (index + 1);
+                
+                thumbDiv.appendChild(img);
+                thumbDiv.addEventListener('click', () => updateGallery(index));
+                thumbnailsGrid.appendChild(thumbDiv);
+            });
+        }
+
+        function updateGallery(index) {
+            currentIndex = index;
+            currentImgElement.style.opacity = '0';
+            setTimeout(() => {
+                currentImgElement.src = 'galeria/' + images[currentIndex];
+                if (currentImgElement.complete) {
+                    currentImgElement.style.opacity = '1';
+                } else {
+                    currentImgElement.onload = () => currentImgElement.style.opacity = '1';
+                }
+            }, 100);
+            document.querySelectorAll('.thumb').forEach((t, i) => t.classList.toggle('active', i === currentIndex));
+        }
+
+        prevBtn.addEventListener('click', () => updateGallery((currentIndex - 1 + images.length) % images.length));
+        nextBtn.addEventListener('click', () => updateGallery((currentIndex + 1) % images.length));
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft') prevBtn.click();
+            if (e.key === 'ArrowRight') nextBtn.click();
+        });
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImage');
+
+        currentImgElement.addEventListener('click', () => {
+            lightbox.classList.add('active');
+            lightboxImg.src = currentImgElement.src;
+            document.body.style.overflow = 'hidden';
+        });
+
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        initThumbnails();
+        updateGallery(0);
+    </script>
 </body>
 </html>
