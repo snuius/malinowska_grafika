@@ -265,13 +265,13 @@ main {
 
 .hero-image img {
     width: min(720px, 90vw);
-    transform: scale(2);
+    transform: scale(0.75);
     transition: transform 0.3s ease;
 }
 
 .hero-image img:hover {
     width: min(720px, 90vw);
-    transform: scale(2.5);
+    transform: scale(0.9);
 }
 
 .about-container {
